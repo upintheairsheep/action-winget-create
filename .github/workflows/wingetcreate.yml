@@ -4,6 +4,10 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
+    - name: Install dependencies
+      run: |
+          winget install wingetcreate
+          
     - uses: actions/checkout@v3
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v3
