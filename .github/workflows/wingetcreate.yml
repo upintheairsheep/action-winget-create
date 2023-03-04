@@ -13,4 +13,4 @@ jobs:
           wingetcreate token -s -t ${{ secrets.GITHUB_TOKEN }}
     - uses: actions/checkout@v2
     - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3.2.1
+      uses: mxschmitt/action-tmate@v3
