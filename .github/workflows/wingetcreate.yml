@@ -4,6 +4,9 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    env: 
+          github: ${{ secrets.GITHUB_TOKEN }}
+          
     steps:
       - name: Install WinGet
         shell: powershell
@@ -20,7 +23,7 @@ jobs:
         run: | 
           cd C:/creation
           ls
-          .\wingetcreate token -s -t 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
+          .\wingetcreate token -s -t "$github"
       - uses: actions/checkout@v2
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
