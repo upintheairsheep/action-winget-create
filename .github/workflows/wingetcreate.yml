@@ -3,10 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    runs-on: windows-latest
-    env: 
-          github: ${{ secrets.GITHUB_TOKEN }}
-          
+    runs-on: windows-latest          
     steps:
       - name: Install WinGet
         shell: powershell
@@ -20,6 +17,8 @@ jobs:
           ls
           .\wingetcreate.exe 
       - name: Install wingetcreate
+        env: 
+          github: ${{ secrets.GITHUB_TOKEN }}
         run: | 
           cd C:/creation
           ls
