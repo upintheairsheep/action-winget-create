@@ -23,12 +23,12 @@ jobs:
           $installationPath = (Get-AppxPackage Microsoft.DesktopAppInstaller).InstallLocation
           Set-ExecutionAlias -Path "C:\Windows\System32\winget.exe" -PackageName "Microsoft.DesktopAppInstaller_8wekyb3d8bbwe" -EntryPoint "Microsoft.DesktopAppInstaller_8wekyb3d8bbwe!winget" -Target "$installationPath\AppInstallerCLI.exe" -AppType Desktop -Version 3
           explorer.exe "shell:appsFolder\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe!winget"
-      - run: |
+      - name: Run WinGet info
+        run: |
           winget --info
-    - name: Install wingetcreate
-      run: |
+      - name: Install wingetcreate
+        run: |
           winget install wingetcreate
           wingetcreate token -s -t ${{ secrets.GITHUB_TOKEN }}
-    - uses: actions/checkout@v2
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
+      - uses: actions/checkout@v2
+      - name
