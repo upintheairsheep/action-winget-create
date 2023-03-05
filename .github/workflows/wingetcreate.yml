@@ -25,7 +25,7 @@ jobs:
           cd C:/creation
           ls
           # Use the '$GITHUB_TOKEN' environment variable instead of '${{ env.TOKEN }}'
-          .\wingetcreate token -s -t ${{ GITHUB_TOKEN }}
+          .\wingetcreate token -s -t ${{ env.GITHUB_TOKEN }}
       - uses: actions/checkout@v2
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
