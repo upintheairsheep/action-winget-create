@@ -18,11 +18,11 @@ jobs:
           .\wingetcreate.exe 
       - name: Install wingetcreate
         env: 
-          github: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: | 
           cd C:/creation
           ls
-          .\wingetcreate token -s -t "$github"
+          .\wingetcreate token -s -t "$TOKEN"
       - uses: actions/checkout@v2
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
