@@ -11,10 +11,10 @@ jobs:
           curl https://github.com/microsoft/winget-create/releases/download/v1.2.5.0/wingetcreate.exe
           
       - run: |
-          ./wingetcreate.exe --info
+          .\wingetcreate.exe --info
       - name: Install wingetcreate
         run: | 
-          ./wingetcreate token -s -t ${{ secrets.GITHUB_TOKEN }}
+          .\wingetcreate token -s -t ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v2
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
