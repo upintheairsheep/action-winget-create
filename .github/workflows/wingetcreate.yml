@@ -22,7 +22,7 @@ jobs:
         run: | 
           cd C:/creation
           ls
-          .\wingetcreate token -s -t "$TOKEN"
+          .\wingetcreate token -s -t ${{ env.TOKEN }}
       - uses: actions/checkout@v2
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
