@@ -8,18 +8,18 @@ jobs:
       - name: Install WinGet
         shell: powershell
         run: |
-          cd C:/Users/*
-          cd Downloads
+          mkdir C:/creation
+          cd C:/creation
           curl https://github.com/microsoft/winget-create/releases/download/v1.2.5.0/wingetcreate.exe
           
       - run: |
-          cd C:/Users/*
-          cd Downloads
+          cd C:/creation
+          ls
           .\wingetcreate.exe --info
       - name: Install wingetcreate
         run: | 
-          cd C:/Users/*
-          cd Downloads
+          cd C:/creation
+          ls
           .\wingetcreate token -s -t ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v2
       - name: Setup tmate session
