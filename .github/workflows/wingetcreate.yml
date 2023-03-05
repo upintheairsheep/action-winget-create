@@ -15,7 +15,7 @@ jobs:
       - run: |
           cd C:/creation
           ls
-          .\wingetcreate.exe --info
+          .\wingetcreate.exe 
       - name: Install wingetcreate
         run: | 
           cd C:/creation
